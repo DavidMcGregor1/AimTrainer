@@ -4,6 +4,7 @@ var score = 0;
 var timeLimit = 30;
 var countdownTimer;
 var resetButton = document.getElementById("resetButton");
+var highScore = 0;
 
 resetButton.addEventListener("click", resetGame);
 
@@ -41,6 +42,12 @@ function updateScore() {
   document.getElementById("score").innerHTML = "Score: " + score;
 }
 
+function updateHighScore() {
+  highScore = Math.max(highScore, score);
+  document.getElementById("highScoreHeader").innerHTML =
+    "High Score: " + highScore;
+}
+
 function countdown() {
   timeLimit--;
   document.getElementById("time").innerHTML = "Time: " + timeLimit;
@@ -49,6 +56,7 @@ function countdown() {
     clearInterval(countdownTimer);
     target.removeEventListener("click", onClick);
     resetButton.disabled = false;
+    updateHighScore();
     alert("Game over! Your score: " + score);
   }
 }
@@ -61,4 +69,4 @@ function resetGame() {
   startGame();
 }
 
-resetGame();
+startGame();

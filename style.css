@@ -2,10 +2,16 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     background-color: #141519;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
+
 
 .makeWhite {
     color: white;
+    grid-column: 2;
+
 }
 
 #gameContainer {
@@ -16,6 +22,7 @@ body {
     border: 2px solid black;
     overflow: hidden;
     background-color: #1F2630;
+    grid-column: 2;
 }
 
 #target {
@@ -27,9 +34,59 @@ body {
     cursor: pointer;
 }
 
-#leaderboard {
-    margin-top: 20px;
-    list-style-type: decimal;
-    padding-left: 20px;
+#resetButton {
+    grid-column: 2;
+    width: 150px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
 }
+
+.test {
+    width: 200px;
+    height: 200px;
+    background-color: #252F36;
+    border-radius:4%;
+    grid-column: 3;
+    margin-left: 10%;
+    margin-top: 3.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+#score {
+    color: white;
+    text-align: left;
+}
+
+#time {
+    color: white;
+    text-align: left;
+}
+
+.highScoreContainer {
+    width: 200px;
+    height: 70px;
+    background-color: #252F36;
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: 10%;
+    margin-top: 3.5%;
+    border-radius:4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+
+}
+
+#highScoreHeader {
+    color: white;
+    text-align: left;
+}
+
+
 
