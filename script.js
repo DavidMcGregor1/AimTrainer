@@ -40,3 +40,15 @@ function onClick() {
 function updateScore() {
   document.getElementById("score").innerHTML = score;
 }
+
+function countdown() {
+  timeLimit--;
+  document.getElementById("time").innerHTML = timeLimit;
+
+  if (timeLimit <= 0) {
+    clearInterval(countdownTimer);
+    target.removeEventListener("click", onClick);
+    resetButton.disabled = false;
+    alert("Game over! Your score: " + score);
+  }
+}
