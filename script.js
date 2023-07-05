@@ -30,3 +30,13 @@ function moveTarget() {
 
   target.addEventListener("click", onClick);
 }
+
+function onClick() {
+  score++;
+  updateScore();
+  moveTarget();
+}
+
+function updateScore() {
+  document.getElementById("score").innerHTML = score;
+}
