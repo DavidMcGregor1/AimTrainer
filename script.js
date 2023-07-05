@@ -13,3 +13,20 @@ function startGame() {
   countdownTimer = setInterval(countdown, 1000);
   moveTarget();
 }
+
+function moveTarget() {
+  var containerWidth = gameContainer.clientWidth;
+  var containerHeight = gameContainer.clientHeight;
+  var targetSize = target.offsetWidth;
+
+  var maxX = containerWidth - targetSize;
+  var maxY = containerHeight - targetSize;
+
+  var randomX = Math.floor(Math.random() * maxX);
+  var randomY = Math.floor(Math.random() * maxY);
+
+  target.style.left = randomX + "px";
+  target.style.top = randomY + "px";
+
+  target.addEventListener("click", onClick);
+}
