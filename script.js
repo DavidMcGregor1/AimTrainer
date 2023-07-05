@@ -3,7 +3,7 @@ var gameContainer = document.getElementById("gameContainer");
 var score = 0;
 var timeLimit = 30;
 var countdownTimer;
-var resetButton = document.getElementById("reset-button");
+var resetButton = document.getElementById("resetButton");
 
 resetButton.addEventListener("click", resetGame);
 
@@ -38,12 +38,12 @@ function onClick() {
 }
 
 function updateScore() {
-  document.getElementById("score").innerHTML = score;
+  document.getElementById("score").innerHTML = "Score: " + score;
 }
 
 function countdown() {
   timeLimit--;
-  document.getElementById("time").innerHTML = timeLimit;
+  document.getElementById("time").innerHTML = "Time: " + timeLimit;
 
   if (timeLimit <= 0) {
     clearInterval(countdownTimer);
