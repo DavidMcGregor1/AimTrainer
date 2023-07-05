@@ -52,3 +52,13 @@ function countdown() {
     alert("Game over! Your score: " + score);
   }
 }
+
+function resetGame() {
+  score = 0;
+  timeLimit = 30;
+  updateScore();
+  resetButton.disabled = true;
+  startGame();
+}
+
+resetGame();
